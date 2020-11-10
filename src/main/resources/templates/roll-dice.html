@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:fragment="head">
     <meta charset="UTF-8">
     <title>Roll Dice</title>
 </head>
 <body>
+<nav th:fragment="navbar"></nav>
 <h2>Pick your number, any number, and cast your dice!</h2>
 <a href="/roll-dice/1">1</a>
 <a href="/roll-dice/2">2</a>
@@ -15,5 +16,6 @@
 
 <div><h3 th:text="${diceresult}"></h3></div>
 
+<div th:fragment="footer"></div>
 </body>
 </html>
