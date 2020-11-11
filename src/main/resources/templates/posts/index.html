@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/header :: header('Showing All Posts | Blog')">
     <meta charset="UTF-8">
     <title>Index</title>
 </head>
 <body>
+<nav th:replace="fragments/navbar :: navbar"></nav>
 
+<div th:each="post : ${posts}">
+    <!-- <a th:href="${'/posts/' + post.id}">View <span th:text="${post.title}"></span></a>-->
+    <h1 th:text="${post.title}">Title</h1>
+    <p th:text="${post.body}">Body</p>
+    <!--<p>Created By: <span th:text="${post.user.username}"></span></p>
+    <form th:action="${'/posts/' + post.id + '/edit'}">
+        <button class="btn btn-warning">EDIT</button>
+    </form>-->
+</div>
+
+
+<footer th:replace="fragments/footer :: footer"></footer>
 </body>
 </html>

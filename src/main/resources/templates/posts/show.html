@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/header :: header('Show One Ad')">
     <meta charset="UTF-8">
     <title>Show</title>
 </head>
 <body>
+<nav th:replace="fragments/navbar :: navbar"></nav>
+<div th:if="${post}">
+    <h1>Title: <span th:text="${post.title}"></span></h1>
+    <!-- <h3>Email: <span th:text="${post.user.email}"></span></h3> -->q
+    <h3>Body: <span th:text="${post.body}"></span></h3>
+</div>
 
+<footer th:replace="fragments/footer :: footer"></footer>
 </body>
 </html>
