@@ -6,13 +6,13 @@ public class PostController {
     @GetMapping("/posts")
     @ResponseBody
     public String postsIndex(){
-        return "This takes you to the posts index page";
+        return "posts/index";
     }
 
     @GetMapping("/posts/{id}")
     @ResponseBody
     public String postsId(@PathVariable String id){
-        return"this is an individual post";
+        return "posts/show";
     }
 
     @GetMapping("/posts/create")
