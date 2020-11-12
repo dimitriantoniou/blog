@@ -1,4 +1,5 @@
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -25,5 +26,11 @@ public class PostController {
     @ResponseBody
     public String createPosts(){
         return "this is how you create a new post";
+    }
+
+    @PostMapping("/posts/{id}/delete")
+    public String delete(Model model, @PathVariable long id){
+        postsDao.deleteById(id);
+        return "redirect:/posts";
     }
 }
