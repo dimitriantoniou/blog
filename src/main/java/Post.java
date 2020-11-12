@@ -14,8 +14,8 @@ public class Post {
     @Column(nullable = false)
     private String body;
 
-    private String title;
-    private String body;
+    //private String title;
+    //private String body;
 
     public String getTitle(){
         return title;
