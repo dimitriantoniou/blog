@@ -1,4 +1,19 @@
+import javax.persistence.*;
+
+@Entity
+@Table(name="posts")
+
 public class Post {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Column(nullable = false, length = 240)
+    private String title;
+
+    @Column(nullable = false)
+    private String body;
+
     private String title;
     private String body;
 
