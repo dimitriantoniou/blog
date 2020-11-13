@@ -33,4 +33,9 @@ public class PostController {
         postsDao.deleteById(id);
         return "redirect:/posts";
     }
+
+    private final UserRepository userDao;
+        public PostController(UserRepository userDao) {
+            this.userDao = userDao;
+        }
 }
