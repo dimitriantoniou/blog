@@ -14,6 +14,9 @@ public class Post {
     @Column(nullable = false)
     private String body;
 
+    @ManyToOne
+    private User user;
+
     //private String title;
     //private String body;
 
